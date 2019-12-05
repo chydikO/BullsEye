@@ -25,15 +25,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showAlert() {
-        var difference = currentValue - targetValue
-        if difference < 0 {
-            difference *= -1
-        }
+        var difference = abs(currentValue - targetValue)
+        var points = 100 - difference
         
-        
-        let massage = "The value of the slider is now : \(currentValue)" +
-                                                    "\nThe target number is: \(targetValue)" +
-                                                    "\nDifference: \(difference)"
+        let massage = "You scored: \(points) points"
         let alert = UIAlertController(title: "Hello Word!!", message: massage, preferredStyle: .alert)
         let action = UIAlertAction(title: "Awesome", style: .default, handler: nil)
         alert.addAction(action)
