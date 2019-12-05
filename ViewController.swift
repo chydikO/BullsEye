@@ -10,12 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var currentValue :Int = 50
-    
+    var currentValue :Int = 0
+    @IBOutlet weak var slider : UISlider!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let roundenValue = slider.value.rounded()
+        currentValue = Int(roundenValue)
     }
 
     @IBAction func showAlert() {
