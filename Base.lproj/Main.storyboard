@@ -111,6 +111,7 @@
                     </view>
                     <connections>
                         <outlet property="slider" destination="91b-Gt-gUz" id="c65-iJ-TAl"/>
+                        <outlet property="targetValues" destination="zkA-EQ-WVu" id="Fl8-To-fs6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
