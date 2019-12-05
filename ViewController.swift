@@ -52,10 +52,13 @@ class ViewController: UIViewController {
         
         let massage = "You scored: \(points) points"
         let alert = UIAlertController(title: title, message: massage, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Awesome", style: .default, handler: nil)
+        let action = UIAlertAction(title: "Awesome", style: .default, handler: {
+            action in
+            self.startNewRound()
+        })
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
-        startNewRound()
+        //startNewRound()
     }
     
     @IBAction func sliderMoved(_ slider: UISlider) {
