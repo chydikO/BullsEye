@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     var currentValue :Int = 0
+    var targetValue = 0
+    
     @IBOutlet weak var slider : UISlider!
 
     override func viewDidLoad() {
@@ -18,14 +20,16 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         let roundenValue = slider.value.rounded()
         currentValue = Int(roundenValue)
+        startNewRound()
     }
 
     @IBAction func showAlert() {
-        let massage = "The value of the slider is now : \(currentValue)"
+        let massage = "The value of the slider is now : \(currentValue)" + "\nThe target number is: \(targetValue)"
         let alert = UIAlertController(title: "Hello Word!!", message: massage, preferredStyle: .alert)
         let action = UIAlertAction(title: "Awesome", style: .default, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
+        startNewRound()
     }
     
     @IBAction func sliderMoved(_ slider: UISlider) {
@@ -33,5 +37,11 @@ class ViewController: UIViewController {
         currentValue = Int(roundenValue)
     }
 
+    func startNewRound() {
+        targetValue = Int.random(in: 1...100)
+        currentValue = 50
+        slider.value = Float(currentValue)
+        
+    }
 }
 
