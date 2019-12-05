@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         let roundenValue = slider.value.rounded()
         currentValue = Int(roundenValue)
-        startNewRound()
+        startNewGame()
     }
 
     @IBAction func showAlert() {
@@ -65,7 +65,17 @@ class ViewController: UIViewController {
         let roundenValue = slider.value.rounded()
         currentValue = Int(roundenValue)
     }
+    
+    @IBAction func startOver() {
+        startNewGame()
+    }
 
+    func startNewGame() {
+        score = 0
+        round = 0
+        startNewRound()
+    }
+    
     func startNewRound() {
         round += 1
         targetValue = Int.random(in: 1...100)
