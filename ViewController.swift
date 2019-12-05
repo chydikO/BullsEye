@@ -25,7 +25,19 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showAlert() {
-        let massage = "The value of the slider is now : \(currentValue)" + "\nThe target number is: \(targetValue)"
+        var difference = 0
+        if currentValue > targetValue {
+            difference = currentValue - targetValue
+        } else if currentValue < targetValue {
+            difference = targetValue - currentValue
+        } else {
+            difference = 0
+        }
+        
+        
+        let massage = "The value of the slider is now : \(currentValue)" +
+                                                    "\nThe target number is: \(targetValue)" +
+                                                    "\nDifference: \(difference)"
         let alert = UIAlertController(title: "Hello Word!!", message: massage, preferredStyle: .alert)
         let action = UIAlertAction(title: "Awesome", style: .default, handler: nil)
         alert.addAction(action)
