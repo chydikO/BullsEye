@@ -25,13 +25,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showAlert() {
-        var difference = 0
-        if currentValue > targetValue {
-            difference = currentValue - targetValue
-        } else if currentValue < targetValue {
-            difference = targetValue - currentValue
-        } else {
-            difference = 0
+        var difference = currentValue - targetValue
+        if difference < 0 {
+            difference *= -1
         }
         
         
